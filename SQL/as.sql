@@ -51,3 +51,23 @@ AS avg_duration_hours
 FROM films 
 
 -- Even more aliasing 
+
+-- get the count(deathdate) and multiply by 100.0
+-- then divide by count(*)
+
+SELECT COUNT(deathdate) 
+* 100.0 / COUNT(*)
+AS percentage_dead 
+FROM people 
+
+-- get the number of years between the newest film and oldest film. Alias the result as difference.
+
+SELECT MAX(release_year) - MIN(release_year) 
+AS difference 
+FROM films 
+
+-- Get the number of decades the films table covers. Alias the result as number_of_decades. The top half of your fraction should be enclosed in parentheses.
+
+SELECT (MAX(release_year) - MIN(release_year)) / 10.0
+AS number_of_decades
+FROM films;

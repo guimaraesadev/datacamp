@@ -1,0 +1,2 @@
+-- GROUP BY 
+-- serve muita das vezes para 'agregar' resultados; 

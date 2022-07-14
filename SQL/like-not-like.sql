@@ -45,3 +45,59 @@ SELECT name
 FROM people
 WHERE name NOT LIKE 'A%'
 
+-- Get the title and gross earnings for movies which begin with the letter 'M' and order the results alphabetically.
+
+SELECT title, gross FROM films 
+WHERE title LIKE 'M%'
+ORDER BY title 
+
+-- Sorting single columns (DESC)
+
+-- Para ordenar os resultados em ordem decrescente, você pode colocar a palavra-chave DESC após ORDER BY. 
+-- Por exemplo, para obter todos os nomes na tabela de pessoas, em ordem alfabética inversa:
+
+SELECT name
+FROM people
+ORDER BY name DESC;
+
+-- Get the IMDB score and film ID for every film from the reviews table, sorted from highest to lowest score.
+
+SELECT film_id, imdb_score FROM reviews ORDER BY imdb_score DESC
+
+-- Get the title for every film, in reverse order. 
+
+SELECT title FROM films ORDER BY title DESC 
+
+-- Get the title and duration for every film, in order of longest duration to shortest.
+
+SELECT title, duration FROM films ORDER BY duration DESC 
+
+-- Sorting multiple columns
+
+-- ORDER BY também pode ser usado para classificar em várias colunas;
+-- Ele classificará pela primeira coluna especificada, depois classificará pela próxima, depois pela próxima e assim por diante.
+-- Por exemplo: 
+
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate, name;
+
+-- classifica primeiro as datas de nascimento (do mais antigo para o mais recente);
+-- e, em seguida, classifica os nomes em ordem alfabética. 
+-- a ordem das colunas IMPORTA! 
+
+-- Get the birth date and name of people in the people table, in order of when they were born and alphabetically by name.
+
+SELECT birthdate, name FROM people ORDER BY birthdate, name 
+
+-- Get the release year, duration, and title of films ordered by their release year and duration.
+
+SELECT release_year, duration, title FROM films ORDER BY release_year, duration 
+
+-- Get certifications, release years, and titles of films ordered by certification (alphabetically) and release year.
+
+SELECT certification, release_year, title FROM films ORDER BY certification, release_year
+
+-- Get the names and birthdates of people ordered by name and birth date. 
+
+SELECT name, birthdate FROM people ORDER BY name, birthdate

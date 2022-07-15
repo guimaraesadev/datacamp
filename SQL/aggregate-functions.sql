@@ -92,5 +92,15 @@ FROM films
 WHERE release_year 
 BETWEEN 2000 AND 2012 
 
+-- Get the release year and largest budget for all films, grouped by release year.
 
+SELECT MAX(budget), release_year
+FROM films
+GROUP BY release_year
+
+-- Get the IMDB score and count of film reviews grouped by IMDB score in the reviews table.
+
+SELECT imdb_score, COUNT(film_id)
+FROM reviews
+GROUP BY imdb_score
 
